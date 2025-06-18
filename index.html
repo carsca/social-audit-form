@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up For Our Newsletter!</title>
+    <!-- Tailwind CSS CDN for basic styling (optional but good for appearance) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif; /* Using Inter font */
+            margin: 0;
+            padding: 0;
+            background-color: #f7fafc; /* Light gray background */
+        }
+        .container {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem; /* p-6 */
+        }
+        .ml-form-embedContainer {
+            background-color: #ffffff; /* White background for the form container */
+            border-radius: 0.75rem; /* rounded-xl */
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-2xl */
+            padding: 2.5rem; /* p-10 */
+            max-width: 28rem; /* max-w-md */
+            width: 100%;
+            border: 1px solid #e2e8f0; /* border border-gray-200 */
+            text-align: center;
+        }
+        .ml-form-embedContainer h2 {
+            font-size: 1.875rem; /* text-3xl */
+            font-weight: 800; /* font-extrabold */
+            color: #2d3748; /* text-gray-800 */
+            margin-bottom: 1.5rem; /* mb-6 */
+        }
+        .ml-form-embedContainer p {
+            color: #4a5568; /* text-gray-600 */
+            margin-bottom: 2rem; /* mb-8 */
+        }
+        /* Styling for the MailerLite form itself (may need adjustments) */
+        .ml-form-formContent label {
+            display: block;
+            text-align: left;
+            font-size: 0.875rem; /* text-sm */
+            font-weight: 500; /* font-medium */
+            color: #4a5568; /* text-gray-700 */
+            margin-bottom: 0.25rem;
+        }
+        .ml-form-formContent input[type="email"] {
+            display: block;
+            width: 100%;
+            padding: 0.75rem 1rem; /* px-4 py-2 */
+            border: 1px solid #cbd5e0; /* border-gray-300 */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+            transition: all 0.15s ease-in-out;
+        }
+        .ml-form-formContent input[type="email"]:focus {
+            outline: none;
+            border-color: #3b82f6; /* focus:border-blue-500 */
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* focus:ring-blue-500 */
+        }
+        .ml-form-formContent button[type="submit"] {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            padding: 0.75rem 1rem; /* py-3 px-4 */
+            border: none; /* No default border */
+            border-radius: 0.5rem; /* rounded-lg */
+            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
+            font-size: 1.125rem; /* text-lg */
+            font-weight: 600; /* font-semibold */
+            color: #ffffff; /* text-white */
+            background-color: #4f46e5; /* bg-indigo-600 */
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+        }
+        .ml-form-formContent button[type="submit"]:hover {
+            background-color: #4338ca; /* hover:bg-indigo-700 */
+            transform: scale(1.02); /* hover:scale-105 */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ml-form-embedContainer">
+            <h2>Join Our Community!</h2>
+            <p>Sign up to receive exciting updates and exclusive content directly in your inbox.</p>
+            <!-- MailerLite Universal -->
+        <script>
+            (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+            .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+            n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+            (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+            ml('account', '1600306');
+        </script>
+<!-- End MailerLite Universal -->
+        </div>
+    </div>
+</body>
+</html>
