@@ -3,101 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up For Our Newsletter!</title>
-    <!-- Tailwind CSS CDN for basic styling (optional but good for appearance) -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>cofeature | Join Us</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif; /* Using Inter font */
-            margin: 0;
-            padding: 0;
-            background-color: #f7fafc; /* Light gray background */
+        :root {
+            --background: #ffffff; /* White background as per the example */
+            --text-primary: #1c1c1c; /* Dark gray/off-black text */
+            --text-secondary: #393636;
+            --accent: #fa3019; /* The specific red-orange from the site */
+            --font-main: 'Courier New', 'Source Code Pro', monospace;
         }
-        .container {
-            min-height: 100vh;
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--background);
+            color: var(--text-primary);
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 1.5rem; /* p-6 */
-        }
-        .ml-form-embedContainer {
-            background-color: #ffffff; /* White background for the form container */
-            border-radius: 0.75rem; /* rounded-xl */
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-2xl */
-            padding: 2.5rem; /* p-10 */
-            max-width: 28rem; /* max-w-md */
-            width: 100%;
-            border: 1px solid #e2e8f0; /* border border-gray-200 */
+            min-height: 100vh;
+            margin: 0;
+            padding: 2rem;
             text-align: center;
         }
-        .ml-form-embedContainer h2 {
-            font-size: 1.875rem; /* text-3xl */
-            font-weight: 800; /* font-extrabold */
-            color: #2d3748; /* text-gray-800 */
-            margin-bottom: 1.5rem; /* mb-6 */
+
+        .header {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
         }
-        .ml-form-embedContainer p {
-            color: #4a5568; /* text-gray-600 */
-            margin-bottom: 2rem; /* mb-8 */
-        }
-        /* Styling for the MailerLite form itself (may need adjustments) */
-        .ml-form-formContent label {
-            display: block;
-            text-align: left;
-            font-size: 0.875rem; /* text-sm */
-            font-weight: 500; /* font-medium */
-            color: #4a5568; /* text-gray-700 */
-            margin-bottom: 0.25rem;
-        }
-        .ml-form-formContent input[type="email"] {
-            display: block;
+
+        .main-content {
+            max-width: 720px;
             width: 100%;
-            padding: 0.75rem 1rem; /* px-4 py-2 */
-            border: 1px solid #cbd5e0; /* border-gray-300 */
-            border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
-            transition: all 0.15s ease-in-out;
+            margin-bottom: 3rem;
         }
-        .ml-form-formContent input[type="email"]:focus {
+
+        .main-content h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 640px) {
+            .main-content h1 {
+                font-size: 2rem;
+            }
+        }
+
+        .main-content p {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin: 0 auto;
+            max-width: 600px; /* Constrain paragraph width for readability */
+        }
+        
+        .highlight {
+            color: var(--accent);
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 2rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            background-color: #fcfcfc;
+        }
+
+        /* MailerLite Universal Styles */
+        .ml-form-embedContainer {
+            width: 100%;
+        }
+
+        .ml-embedded h2 {
+            font-family: var(--font-main);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 1rem;
+        }
+
+        .ml-embedded p {
+            font-family: var(--font-main);
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 1rem;
+        }
+
+        .ml-form-formContent .ml-form-fieldRow input {
+            background-color: #ffffff !important;
+            color: var(--text-primary) !important;
+            border: 1px solid #cccccc !important;
+            border-radius: 4px !important;
+            padding: 0.875rem 1rem !important;
+            font-family: var(--font-main) !important;
+            font-size: 1rem !important;
+            transition: border-color 0.2s ease;
+        }
+
+        .ml-form-formContent .ml-form-fieldRow input:focus {
             outline: none;
-            border-color: #3b82f6; /* focus:border-blue-500 */
-            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.5); /* focus:ring-blue-500 */
+            border-color: var(--accent) !important;
+            box-shadow: 0 0 0 2px rgba(250, 48, 25, 0.2);
         }
-        .ml-form-formContent button[type="submit"] {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            padding: 0.75rem 1rem; /* py-3 px-4 */
-            border: none; /* No default border */
-            border-radius: 0.5rem; /* rounded-lg */
-            box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); /* shadow-sm */
-            font-size: 1.125rem; /* text-lg */
-            font-weight: 600; /* font-semibold */
-            color: #ffffff; /* text-white */
-            background-color: #4f46e5; /* bg-indigo-600 */
-            cursor: pointer;
-            transition: background-color 0.2s ease-in-out, transform 0.2s ease-in-out;
+
+        .ml-form-formContent .ml-form-buttonRow button {
+            background-color: var(--text-secondary) !important;
+            color: #ffffff !important;
+            font-weight: 700 !important;
+            font-family: var(--font-main) !important;
+            border-radius: 4px !important;
+            padding: 0.875rem 1rem !important;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            text-transform: uppercase;
         }
-        .ml-form-formContent button[type="submit"]:hover {
-            background-color: #4338ca; /* hover:bg-indigo-700 */
-            transform: scale(1.02); /* hover:scale-105 */
+
+        .ml-form-formContent .ml-form-buttonRow button:hover {
+            background-color: var(--accent) !important;
+            transform: translateY(-2px);
         }
+
+        .footer {
+            margin-top: 4rem;
+            font-size: 0.875rem;
+            color: #a3a3a3;
+        }
+
+        .footer a {
+            color: #a3a3a3;
+            text-decoration: underline;
+        }
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="ml-form-embedContainer">
-            <div class="ml-embedded" data-form="jWbTKb"></div>
-            <!-- MailerLite Universal -->
-            <script>
-                (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
-                .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
-                n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
-                (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
-                ml('account', '1600306');
-            </script>
-            <!-- End MailerLite Universal -->
+
+    <header class="header">
+        cofeature
+    </header>
+
+    <main class="main-content">
+        <h1>An <span class="highlight">AI-native</span> marketing platform for high-touch local businesses.</h1>
+        <p>We unify predictive and conversational capabilities into a single growth engine. The result? Expanded visibility and more high-intent leads.</p>
+    </main>
+    
+    <div class="form-container">
+        <div class="ml-embedded" data-form="jWbTKb"></div>
         </div>
-    </div>
-</body>
+
+    <footer class="footer">
+        © 2025 Cofeature LLC. All rights reserved.
+    </footer>
+
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '1600306');
+    </script>
+    </body>
 </html>
